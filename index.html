@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Kirishima Automation Host</title><link rel="stylesheet" href="style.css"></head><body>
+<header><p class="muted">Mac Automation Host の説明</p><nav aria-label="ページ"><a href="index.html">アプリについて</a><a href="privacy.html">プライバシーポリシー</a></nav></header>
+<main>
+<h1>Kirishima Automation Host</h1>
+<p>Kirishima Automation Host は、本人が利用するMacで、設定されたスケジュールに従ってGoogle Calendarの予定情報を読み取り、ローカルのAutomation処理へ渡すためのアプリです。このページはアプリの説明とデータ取扱いを示すものです。現在、アプリの一般配布は行っていません。</p>
+<h2>現在の機能</h2><p>接続したGoogleアカウントのprimary Calendarを読み取ります。処理の基準時刻から24時間の範囲で、予定のタイトル、開始・終了、終日予定の区別、予定による時間の占有、繰り返し予定の区別を扱います。Automationへ渡す予定は最大20件です。</p>
+<p>Googleへの取得範囲には、終日予定とタイムゾーンの差に対応するため、前後48時間の余裕を設けています。24時間の対象範囲から外れる予定はメモリ上で除外します。取得件数自体を20件に限定する仕組みではありません。</p>
+<h2>Googleへの接続と権限</h2><p>Google Calendarの権限として明示要求するのは <code>calendar.events.readonly</code> です。この権限はGoogle上では、アクセス可能なすべてのカレンダーの予定を表示できる範囲ですが、現在のHost実装が読み取る対象はprimary Calendarだけです。予定の作成・変更・削除は行いません。</p>
+<p>接続にはGoogle Sign-In SDKを使用します。SDKは基本のidentity情報を取り扱いますが、霧島のAutomationはメールアドレスやプロフィールをContext、Receipt、診断ログ、アカウントの結び付け、画面表示に使いません。詳しくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+<h2>実行結果の意味</h2><p>現在の完了結果は、Calendar情報を取得・検証し、AutomationのCoreへ渡し、ローカルにアクセス記録を残したことを意味します。AIによる処理、提案生成、通知、外部への配信は現在のHostのCalendar処理には含まれていません。</p>
+<h2>問い合わせ</h2><p>運営者：otogi1203。公開問い合わせ先：<a href="mailto:otogi4486@gmail.com">otogi4486@gmail.com</a>。</p></main><footer>適用日：2026年10月5日</footer></body></html>
